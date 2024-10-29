@@ -10,7 +10,7 @@ K_SOURCES, K_AUDIOOUT, K_CACHEDATA, K_SPEECHOUT = (
     Path("./data/cache/audiodata.pickle"),
     Path("./data/cache/speeches"),
 )
-K_VOSK_MODEL, K_LANG = K_MODELS_PATH / "vosk-model-it-0.22", "it"
+K_VOSK_MODEL, K_LANG = "vosk-model-it-0.22", "it"
 K_INVALIDATE_CACHE = False
 K_LOGGER_FORMAT = "[%(asctime)s] %(name)s:%(lineno)d %(levelname)s - %(message)s"
 
@@ -46,7 +46,6 @@ def parse_args():
     parser.add_argument(
         "--vosk-model",
         default=K_VOSK_MODEL,
-        type=Path,
         help=f"Name of the VOSK model. Must be placed inside {K_MODELS_PATH}",
     )
     parser.add_argument(
